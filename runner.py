@@ -10,6 +10,7 @@ class CryptoTrader:
             'apiKey': api_key,
             'secret': api_secret,
             'enableRateLimit': True,
+            'add': True
         })
 
     def fetch_ohlcv(self, symbol, timeframe, limit):
