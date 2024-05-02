@@ -9,8 +9,7 @@ class CryptoTrader:
         self.exchange = ccxt.binance({
             'apiKey': api_key,
             'secret': api_secret,
-            'enableRateLimit': True,
-            'add': True
+            'enableRateLimit': True
         })
 
     def fetch_ohlcv(self, symbol, timeframe, limit):
