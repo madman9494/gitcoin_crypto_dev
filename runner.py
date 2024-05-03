@@ -14,6 +14,7 @@ class CryptoTrader:
 
     def fetch_ohlcv(self, symbol, timeframe, limit):
         ohlcv = self.exchange.fetch_ohlcv(symbol, timeframe, limit=limit)
+        gov = self.exchange.fetch_ohlcv(symbol, timeframe, limit=limit)
         df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
         df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
         df.set_index('timestamp', inplace=True)
